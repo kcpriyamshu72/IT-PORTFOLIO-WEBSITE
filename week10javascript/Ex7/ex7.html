@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabular Data with Alternating Row Colors</title>
+<style>
+  .odd {
+    background-color: #acc8d3;
+  }
+
+  .even {
+    background-color: #eaeff6;
+  }
+</style>
+</head>
+<body>
+
+<table id="data-table" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid white; padding: 8px; text-align: center; background-color: #007c92; color: white;">S.N.</th>
+      <th style="border: 1px solid white; padding: 8px; text-align: center; background-color: #007c92; color: white;">Name</th>
+      <th style="border: 1px solid white; padding: 8px; text-align: center; background-color: #007c92; color: white;">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">1</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">Name 1</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">1.jpg</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">2</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">Name 2</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">2.jpg</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">3</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">Name 3</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">3.jpg</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">4</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">Name 4</td>
+      <td style="border: 1px solid white; padding: 8px; text-align: center;">4.jpg</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var table = document.getElementById("data-table");
+    var rows = table.getElementsByTagName("tr");
+    for (var i = 0; i < rows.length; i++) {
+      if (i % 2 === 0) {
+        rows[i].classList.add("even");
+      } else {
+        rows[i].classList.add("odd");
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
