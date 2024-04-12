@@ -1,0 +1,174 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <style>  
+    body {
+      margin: 0; 
+      padding: 0; 
+      background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(UWEBristol.jpg);
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      font-family: "Poppins", sans-serif;
+    } 
+
+    nav {
+      width: 100%;
+      height: 15vh;
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      position: fixed; 
+      top: 0; 
+
+    }
+
+    .logo img {
+      padding: 8px;
+      margin: 8px;
+      width: 234px;
+      height: 94px;
+      border-radius: 30px;
+       
+    }
+    
+
+    nav .menu {
+      width: 40%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav .menu a {
+      width: 25%;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      background-color: white; 
+      max-width: 1200px;
+      margin: auto;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    
+    }
+
+    .container h1 {
+      color: #479cd8; 
+    }
+
+    input[type=text], input[type=password], textarea, select {
+      width: calc(100% - 30px);
+      padding: 10px;
+      margin: 5px 0;
+      background-color: white;
+    }
+
+    .registerbtn {
+      padding: 15px;
+      margin-top: 10px;
+      width: calc(100% - 10px);
+      background-color: rgb(0, 94, 176);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .registerbtn:hover {
+      background-color: #73c2fb; 
+    }
+
+    .bottom-bar {
+      background: #73c2fb;
+      text-align: center;
+      padding: 4px;
+    }
+
+    .bottom-bar p {
+      color: #343434;
+      margin: 0;
+      font-size: 16px;
+      padding: 7px;
+    }
+    
+  </style>  
+</head>  
+<body>  
+  <nav>
+    <div class="logo"> 	<img src="uwe2.jpg" > </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 15vh;">  
+    <form id="registrationForm">  
+      <center><h1>Student Registration Form</h1></center>  
+      <hr>  
+      <label> Firstname </label>   
+      <input type="text" name="firstname" placeholder="Firstname" size="15" required />   
+      <label> Middlename: </label>   
+      <input type="text" name="middlename" placeholder="Middlename" size="15" required />   
+      <label> Lastname: </label>    
+      <input type="text" name="lastname" placeholder="Lastname" size="15" required />   
+      <div>  
+        <label>Course:</label>   
+        <select>  
+          <option value="Course">Course</option>  
+          <option value="BSc.Hons Computing">Bsc.Hons Computing</option>  
+          <option value="Bsc.Hons Cs and DF">Bsc.Hons CS and DF</option>  
+          <option value="MSC.IT">MSC.IT</option>  
+        </select>  
+      </div>  
+      <div>  
+        <label>Gender:</label><br>  
+        <input type="radio" value="Male" name="gender" checked> Male   
+        <input type="radio" value="Female" name="gender"> Female   
+        <input type="radio" value="Other" name="gender"> Other  
+      </div>  
+      <label>Phone:</label>  
+      <input type="text" name="phone" placeholder="phone no." size="10" required>   
+      <label for="email"><b>Email</b></label>  
+      <input type="text" placeholder="Enter Email" name="email" required>  
+      <label for="psw"><b>Password</b></label>  
+      <input type="password" placeholder="Enter Password" name="psw" required>  
+      <label for="psw-repeat"><b>Re-type Password</b></label>  
+      <input type="password" placeholder="Retype Password" name="psw-repeat" required>  
+      <button type="submit" class="registerbtn">Submit</button>    
+    </form>  
+  </div> 
+
+  <footer>     
+    <div class="bottom-bar">
+      <p>&copy; 2024 UWE BRISTOL. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var inputs = document.querySelectorAll('input, select, textarea');
+      var allFilled = true;
+      inputs.forEach(function(input) {
+        if (!input.value) {
+          allFilled = false;
+        }
+      });
+      if (allFilled) {
+        alert('Your data has been submitted.'); 
+      }
+    });
+  </script>
+</body>  
+</html>

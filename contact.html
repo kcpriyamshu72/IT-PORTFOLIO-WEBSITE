@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="contact.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">	<img src="uwe2.jpg" > </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="title">
+      <h1>Contact Us</h1>
+    </div>
+    <div class="contact-form">
+      <div class="input-fields">
+        <input type="text" class="input" id="name" placeholder="Name">
+        <input type="text" class="input" id="email" placeholder="Email Address">
+        <input type="text" class="input" id="phone" placeholder="Phone">
+        <input type="text" class="input" id="subject" placeholder="Subject">
+      </div>
+      <div class="msg">
+        <textarea placeholder="Message" id="message"></textarea>
+        <div class="btn" id="submitBtn">Send</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      // Get the values from the form fields
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value;
+  
+      // Checks if any of the fields are empty
+      if (name === '' || email === '' || phone === '' || subject === '' || message === '') {
+        // If any field is empty, do not display the "Thank you" message
+        alert('Please fill in all fields before sending.');
+      } else {
+        // If all fields are filled, display the "Thank you" message
+        alert('Your data has been submitted.');
+  
+        // Clear the input fields after submission
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
+      }
+    });
+  </script>
+  <footer>
+     
+  <div class="bottom-bar">
+      <p>&copy; 2024 UWE BRISTOL . All rights reserved</p>
+  </div>
+  </footer>
+</body>
+</html>
